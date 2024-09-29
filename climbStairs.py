@@ -1,5 +1,4 @@
-# I solved leetcode 70. Climbing Stairs problem
-# The problem statement reads as:
+# I solved LeetCode # 70. "Climbing Stairs". The problem statement reads as:
 # You are climbing a staircase. It takes n steps to reach the top.
 # Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
 # Example 2:
@@ -9,8 +8,8 @@
 # 1. 1 step + 1 step + 1 step
 # 2. 1 step + 2 steps
 # 3. 2 steps + 1 step
-# I have taken a custom input for no. of stairs. This is a dynamic programming problem, and the hint here is fibonacci sequence.
-# Try to draw a diagram of stairs to better understand it.
+# I have taken a custom input for no. of stairs. This is a dynamic programming problem, and the hint here is
+# fibonacci sequence. P.S. Try to draw a diagram of stairs to better understand it.
 def climbStairs(n):
     # if no. of stairs = 1, then only 1 combination to climb them
     if n == 1:
