@@ -1,8 +1,10 @@
-# In this section, I solved leetCode # 88 Merge Sorted Array
-# The time complexity of this code is O(m + n), and space complexity is 0(1) since the sorting is in-place.
-# The problem statement reads as:
-# You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n,representing the number of elements in nums1 and nums2 respectively. Merge nums1 and nums2 into a single array sorted in non-decreasing order
-# The final sorted array should not be returned by the function, but instead be stored inside the array nums1. To accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that should be merged, and the last n elements are set to 0 and should be ignored. nums2 has a length of n.
+# In this section, I solved LeetCode # 88 "Merge Sorted Array". The problem statement reads as:
+# You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n,
+# representing the number of elements in nums1 and nums2 respectively. Merge nums1 and nums2 into a single array
+# sorted in non-decreasing order
+# The final sorted array should not be returned by the function, but instead be stored inside the array nums1.
+# To accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that should be
+# merged, and the last n elements are set to 0 and should be ignored. nums2 has a length of n.
 def merge(nums1, m, nums2, n):
     """
         :type nums1: List[int]
@@ -20,7 +22,8 @@ def merge(nums1, m, nums2, n):
         if nums1[i] > nums2[j]:
             nums1[k] = nums1[i]
             # if nums1[i] > nums2[j] then only i will be decremented
-            # and j will remain the same, meaning that if this condition is true and i,j = 2, then after this statement i = 1 and j = 2
+            # and j will remain the same, meaning that if this condition is true and i,j = 2, then after
+            # this statement i = 1 and j = 2
             i = i - 1
         else:
             nums1[k] = nums2[j]
@@ -42,4 +45,6 @@ if __name__ == "__main__":
     n = 3
     merge(nums1, m, nums2, n)
     print(nums1)
+# The time complexity of this code is O(m + n), and space complexity is 0(1) since the sorting is in-place.
+
 
