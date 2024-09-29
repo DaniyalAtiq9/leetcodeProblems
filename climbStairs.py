@@ -17,21 +17,24 @@ def climbStairs(n):
     # if no. of stairs = 2, then only 2 combination to climb them
     elif n == 2:
         return 2
-    # Initializing array with zero entries of size n
-    arr = [0] * (n + 1)
     # We know the combinations to climb 1 and 2 stairs.
-    arr[1] = 1
-    arr[2] = 2
+    prev2 = 1 # This is for one stair
+    prev1 = 2 # This is for two stairs
     # The no. of combinations to climb let's say 3 stairs is equal to the sum of number of combinations present to climb 1
     # stair hence  arr[i - 1] and no. of combinations available to climb 2 stairs hence arr[i - 2], this is true for *n* no.
     # of stairs
     for i in range(3,n + 1):
-        arr[i] = arr[i - 1] + arr[i - 2]
-    return arr[n]
+        current = prev1 + prev2
+        prev2 = prev1
+        prev1 = current
+    return prev1
 
 # Main function written for convenience
 if __name__ == "__main__":
     n = int(input("Enter number of stairs: "))
     result = climbStairs(n)
     print(f"No. of ways to climb {n} stairs: {result}")
+
+# My original solution had O(n) time and space complexity, however I found out that I could also do this problem
+# in O(1) complexity, hence I edited it. My previous solution used an array for memoization which took O(n) space.
 
